@@ -15,7 +15,6 @@ body {
     transform: translateY(0px);
     height: inherit;
     width: 100%;
-    transition: all linear 0.5s;
 }
 .layer-background {
     background-image: url(../images/ilu_bg.jpg);

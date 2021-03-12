@@ -30,29 +30,12 @@
        var man = document.getElementsByClassName("layer-man")[0]; // vyhledání elemetu s postavou
        var mountain = document.getElementsByClassName("layer-1")[0];// vyhledání elementu s horou
        var forground = document.getElementsByClassName("layer-2")[0];// vyhledání elementu s popředím
-       window.onscroll = function() {parallax()}
-
-        function parallax(){
-            let scrollTop = document.documentElement.scrollTop;
-            console.log(scrollTop);
-            if(scrollTop > 50)
-            {
-                man.style.transform = "translateY(-150px) translateX(-80px)";
-            }
-            else
-            {
-                man.style.transform = "initial";
-            }
-            if(scrollTop > 200)
-            {
-                mountain.style.transform = "translateY(-100px)";
-                forground.style.transform= "translateY(-80px) translateX(-30px)";
-            }
-            else
-            {
-                mountain.style.transform = "initial";
-                forground.style.transform= "initial";
-            }
+       window.onscroll = () => 
+       {
+            let scrollTop = document.documentElement.scrollTop; // vyhledá danou odskrolovanou výšku od vrchu stránky
+            man.style.transform = "translateY(-"+ scrollTop/1.40 +"px) translateX(-"+ scrollTop/2+"px)"// posouvání postavy
+            forground.style.transform = "translateY(-"+ scrollTop/2 +"px) translateX(-"+ scrollTop/4+"px)" // posouvání popředí
+            mountain.style.transform = "translateY(-"+ scrollTop/2 +"px)" // posouvání hory
         }
     </script>
 </body>
